@@ -1,0 +1,16 @@
+<p>
+  Search Results for {{ term }}
+</p>
+   
+  <table class='table'>
+      
+  <thead>
+  </thead>
+   
+    <tbody>
+   
+      <tr *ngFor="let gallery of galleries" [galleryRow]='gallery'>
+      </tr>
+         
+    </tbody>
+  </table>

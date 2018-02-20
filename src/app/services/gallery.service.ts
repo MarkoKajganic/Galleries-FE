@@ -55,7 +55,6 @@ export class GalleryService {
         return new Observable((o: Observer<any>) => {
             let params = new HttpParams();
             params = params.append('term', term);
-
             this.http.get('http://localhost:8000/api/galleries', {
                 params: params,
                 headers: this.authService.getRequestHeaders()

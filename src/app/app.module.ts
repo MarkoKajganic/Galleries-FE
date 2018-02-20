@@ -12,7 +12,10 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './components/register/register.component';
 import { GalleriesComponent } from './components/galleries/galleries.component';
-import { GalleryService} from './services/gallery.service'
+import { GalleryService} from './services/gallery.service';
+import { SearchModule } from './search.module';
+import { SharedModule } from './shared.module';
+
 
 
 
@@ -22,7 +25,8 @@ import { GalleryService} from './services/gallery.service'
     LayoutComponent,
     LoginComponent,
     RegisterComponent,
-    GalleriesComponent
+    GalleriesComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -30,11 +34,14 @@ import { GalleryService} from './services/gallery.service'
     FormsModule,
     HttpModule,
     HttpClientModule,
+    SearchModule,
+    SharedModule
   ],
   providers: [
     AuthService,
     GalleryService,
-   
+  ],
+  exports: [
   ],
   bootstrap: [AppComponent]
 })

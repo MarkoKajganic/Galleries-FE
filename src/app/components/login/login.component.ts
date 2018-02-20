@@ -14,6 +14,7 @@ export class LoginComponent {
     }
 
     login(email, password) {
+        console.log('OKINUO SE LOGIN');
         this.authService.login(email, password)
             .subscribe(
             () => {

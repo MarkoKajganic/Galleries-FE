@@ -21,6 +21,9 @@
         <li class="nav-item" *ngIf="auth.isAuthenticated" (click)="auth.logout()">
               <a class="nav-link">Logout</a>
           </li>
+          <li class="nav-item">
+                <app-search></app-search>
+            </li>
       </ul>
     </nav>
   

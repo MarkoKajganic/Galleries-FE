@@ -1,21 +1,19 @@
 <p>
-  galleries works!
+ All galleries
 </p>
 
-
-<div class="container">
+<table class='table'>
    
-  <ul>
-
-    <li  routerLink="/galleries/{{gallery.id}}" *ngFor="let gallery of galleries">
-
-      <div class="col-sm-4">{{gallery.title}} </div>
-     
-    </li>
-
-  </ul>
+    <thead>
   
-</div>
+    </thead>
 
+    <tbody>
 
-<router-outlet></router-outlet>
+      <tr *ngFor="let gallery of galleries" [galleryRow]='gallery'>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <router-outlet></router-outlet>
