@@ -1,0 +1,31 @@
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <ul class="navbar-nav">
+
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/galleries" routerLinkActive="active">All galleries</a>
+          </li>
+          <li class="nav-item" *ngIf="auth.isAuthenticated">
+              <a class="nav-link" routerLink="/create" routerLinkActive="active">Create New Gallery</a>
+          </li>
+          <li class="nav-item" *ngIf="auth.isAuthenticated">
+            <a class="nav-link" routerLink="/my-galleries" routerLinkActive="active">My galleries</a>
+        </li>
+   
+  
+          <li class="nav-item" *ngIf="!auth.isAuthenticated">
+              <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+          </li>
+          <li class="nav-item" *ngIf="!auth.isAuthenticated">
+            <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="auth.isAuthenticated" (click)="auth.logout()">
+              <a class="nav-link">Logout</a>
+          </li>
+      </ul>
+    </nav>
+  
+
+
+ <div class="container">
+  <router-outlet></router-outlet>
+</div> 
