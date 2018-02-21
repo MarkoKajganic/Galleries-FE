@@ -2,14 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GalleryRowComponent } from './components/gallery-row/gallery-row.component';
 import { GalleryService } from './services/gallery.service';
+import { AppRoutingModule } from './app-routing.module';
+import { GalleryResolver } from './resolvers/GalleryResolver';
 
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        AppRoutingModule
     ],
     providers: [
-        GalleryService
+        GalleryService,
+        GalleryResolver
     ],
     declarations: [
         GalleryRowComponent

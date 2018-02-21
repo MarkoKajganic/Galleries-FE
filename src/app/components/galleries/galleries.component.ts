@@ -22,5 +22,20 @@ export class GalleriesComponent implements OnInit {
     });
 }
 
+      
+      //Load more functionality only on frontend
+      private pageLimit = 3;
+      private pagesShown = 1;
+      private pageSize = 3;
+      private hasMoreItems = true;
+     
+      public showMoreItems(){
+        this.pagesShown++;
+        this.pageLimit = this.pageSize * this.pagesShown;
+        if (this.pageLimit >= this.galleries.length) {
+          this.hasMoreItems = false;
+        }
+      }
+
 
 }

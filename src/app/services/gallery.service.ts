@@ -25,7 +25,9 @@ export class GalleryService {
                         gallery.title,
                         gallery.description,
                         gallery.image_urls,
-                        gallery.user_id);
+                        gallery.user_id,
+                        gallery.user,
+                        gallery.created_at);
                 });
                 o.next(this.galleries);
                 return o.complete();
@@ -43,7 +45,9 @@ export class GalleryService {
                     gallery.title,
                     gallery.description,
                     gallery.image_urls,
-                    gallery.user_id, 
+                    gallery.user_id,
+                    gallery.user,
+                    gallery.created_at 
                 );
                 o.next(newGallery);
                 return o.complete();
@@ -65,7 +69,9 @@ export class GalleryService {
                         gallery.title,
                         gallery.description,
                         gallery.image_urls,
-                        gallery.user_id);
+                        gallery.user_id,
+                        gallery.user,
+                        gallery.created_at);
                 });
                 o.next(this.galleries);
                 return o.complete();

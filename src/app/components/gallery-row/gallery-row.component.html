@@ -1,6 +1,14 @@
+    <tr>
+        Title:  <a routerLink="/galleries/{{gallery.id}}" routerLinkActive="active">
+                     {{gallery.title}} </a>
+    </tr>
 
-    <tr>Title: {{gallery.title}}</tr>
+    <tr>
+        Author: <a routerLink="author/{{gallery.user.id}}" routerLinkActive="active">
+                    {{gallery.user.first_name}} {{gallery.user.last_name}} </a>
+    </tr>
+
+    <tr>Created at: {{gallery.created_at}}</tr>
     
     <tr> <img src="{{ gallery.image_urls }}" width="250"></tr>
     
-

@@ -15,8 +15,8 @@ import { GalleriesComponent } from './components/galleries/galleries.component';
 import { GalleryService} from './services/gallery.service';
 import { SearchModule } from './search.module';
 import { SharedModule } from './shared.module';
-
-
+import { GalleryViewComponent } from './components/gallery-view/gallery-view.component';
+import { GalleryAddComponent } from './components/gallery-add/gallery-add.component';
 
 
 @NgModule({
@@ -26,6 +26,8 @@ import { SharedModule } from './shared.module';
     LoginComponent,
     RegisterComponent,
     GalleriesComponent,
+    GalleryViewComponent,
+    GalleryAddComponent
     
   ],
   imports: [

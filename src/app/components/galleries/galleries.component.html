@@ -10,10 +10,14 @@
 
     <tbody>
 
-      <tr *ngFor="let gallery of galleries" [galleryRow]='gallery'>
+      <tr *ngFor="let gallery of galleries | slice: 0 : pageLimit" [galleryRow]='gallery'>
       </tr>
       
     </tbody>
   </table>
+
+  <div>
+      <button  [hidden]="!hasMoreItems" (click)="showMoreItems()">Load more</button>
+  </div>
 
   <router-outlet></router-outlet>

@@ -18,7 +18,6 @@ export class SearchPageComponent implements OnInit {
 
   ngOnInit() {
    
-
         let term = this.route.snapshot.paramMap.get('term');
         this.galleryService.searchGalleriesByTerm(term).subscribe(data => {
             this.galleries = data;
