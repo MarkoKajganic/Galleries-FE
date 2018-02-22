@@ -23,10 +23,10 @@ export class GalleriesComponent implements OnInit {
 }
 
       
-      //Load more functionality only on frontend
-      private pageLimit = 3;
+      //super bad Load more functionality only on frontend
+      private pageLimit = 10;
       private pagesShown = 1;
-      private pageSize = 3;
+      private pageSize = 10;
       private hasMoreItems = true;
      
       public showMoreItems(){

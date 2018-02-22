@@ -4,6 +4,7 @@ import { GalleryRowComponent } from './components/gallery-row/gallery-row.compon
 import { GalleryService } from './services/gallery.service';
 import { AppRoutingModule } from './app-routing.module';
 import { GalleryResolver } from './resolvers/GalleryResolver';
+import { UserResolver } from './resolvers/UserResolver';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { GalleryResolver } from './resolvers/GalleryResolver';
     ],
     providers: [
         GalleryService,
-        GalleryResolver
+        GalleryResolver,
+        UserResolver
     ],
     declarations: [
         GalleryRowComponent

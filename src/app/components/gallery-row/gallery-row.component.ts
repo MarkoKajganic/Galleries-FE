@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { Gallery } from '../../models/gallery.model';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: '[galleryRow]',
@@ -14,10 +15,13 @@ export class GalleryRowComponent implements OnInit {
     this.gallery = gallery;
   }
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
     //console.log(this.gallery)
   }
 
+  public canEdit() {
+    return this.auth.isAuthenticated && this.auth.user.id === this.gallery.user_id;
+  }
 }

@@ -17,6 +17,8 @@ import { SearchModule } from './search.module';
 import { SharedModule } from './shared.module';
 import { GalleryViewComponent } from './components/gallery-view/gallery-view.component';
 import { GalleryAddComponent } from './components/gallery-add/gallery-add.component';
+import { GalleryAuthorComponent } from './components/gallery-author/gallery-author.component';
+import { GalleryMyComponent } from './components/gallery-my/gallery-my.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { GalleryAddComponent } from './components/gallery-add/gallery-add.compon
     RegisterComponent,
     GalleriesComponent,
     GalleryViewComponent,
-    GalleryAddComponent
+    GalleryAddComponent,
+    GalleryAuthorComponent,
+    GalleryMyComponent
     
   ],
   imports: [

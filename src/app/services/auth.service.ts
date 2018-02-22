@@ -9,11 +9,13 @@ import { User } from '../models/user.model';
 export class AuthService {
 
     public isAuthenticated: boolean;
+    public user;
 
     constructor(private http: HttpClient,
-                private router: Router,
-    ) {
+                private router: Router,) 
+    {
         this.isAuthenticated = !!window.localStorage.getItem('loginToken');
+        this.user = JSON.parse(window.localStorage.getItem('user'));
     }
 
     login(email: string, password: string) {
@@ -23,8 +25,11 @@ export class AuthService {
                 'password': password
             })
                 .subscribe(
-                (data: { token: string }) => {
+                (data: { token: string, user: User }) => {
                     window.localStorage.setItem('loginToken', data.token);
+                    window.localStorage.setItem('user', JSON.stringify(data.user));
+
+                    this.user = data.user;
                     this.isAuthenticated = true;
 
                     o.next(data.token);
@@ -39,10 +44,10 @@ export class AuthService {
 
     public logout() {
         window.localStorage.removeItem('loginToken');
+        window.localStorage.removeItem('user');
         this.isAuthenticated = false;
         this.router.navigateByUrl('/login');
     }
-
 
     public getRequestHeaders() {
         return new HttpHeaders().set('Authorization', 'Bearer ' + window.localStorage.getItem('loginToken'));
@@ -72,9 +77,6 @@ export class AuthService {
                 }
                 );
         });
-
-       
     }
-
 
 }

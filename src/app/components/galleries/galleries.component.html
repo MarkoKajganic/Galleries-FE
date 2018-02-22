@@ -12,7 +12,9 @@
 
       <tr *ngFor="let gallery of galleries | slice: 0 : pageLimit" [galleryRow]='gallery'>
       </tr>
-      
+
+      <div *ngIf="!galleries"> There is no galleries in database </div>
+
     </tbody>
   </table>
 

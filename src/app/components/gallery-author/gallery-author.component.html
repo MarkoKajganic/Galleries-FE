@@ -1,0 +1,14 @@
+<h3>All galleries by {{gallery.user.first_name}} {{gallery.user.last_name}}</h3>
+
+<table class='table'>
+      
+    <thead>
+    </thead>
+     
+      <tbody>
+     
+        <tr *ngFor="let gallery of galleries" [galleryRow]='gallery'>
+        </tr>
+  
+      </tbody>
+    </table>

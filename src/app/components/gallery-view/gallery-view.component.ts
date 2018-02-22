@@ -21,16 +21,6 @@ export class GalleryViewComponent implements OnInit {
       this.gallery = data.gallery;
     })
 
-
-    // this.galleryService.getGalleryById(this.gallery.id).subscribe(data => {
-    //   this.gallery = data;
-    // }, (err: HttpErrorResponse) => {
-    //   alert(`Backend returned code ${err.status} with message: ${err.error}`);
-    // });
-
-
   }
-
-
 
 }

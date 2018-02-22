@@ -8,6 +8,9 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
 import { GalleryAddComponent } from './components/gallery-add/gallery-add.component';
 import { GalleryViewComponent } from './components/gallery-view/gallery-view.component';
 import { GalleryResolver } from './resolvers/GalleryResolver';
+import { GalleryAuthorComponent } from './components/gallery-author/gallery-author.component';
+import { UserResolver } from './resolvers/UserResolver';
+import { GalleryMyComponent } from './components/gallery-my/gallery-my.component';
 
 const appRoutes: Routes = [
   {
@@ -27,8 +30,19 @@ const appRoutes: Routes = [
     }
   },
   {
+    path: 'galleries/:id/author',
+    component: GalleryAuthorComponent,
+    resolve: {
+      user: UserResolver
+    }
+  },
+  {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'my-galleries',
+    component: GalleryMyComponent
   },
   {
     path: 'register',
