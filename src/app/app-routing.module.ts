@@ -11,6 +11,8 @@ import { GalleryResolver } from './resolvers/GalleryResolver';
 import { GalleryAuthorComponent } from './components/gallery-author/gallery-author.component';
 import { UserResolver } from './resolvers/UserResolver';
 import { GalleryMyComponent } from './components/gallery-my/gallery-my.component';
+import { GuestGuard } from './guards/guest.guard';
+import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes: Routes = [
   {
@@ -20,10 +22,12 @@ const appRoutes: Routes = [
   },
   {
     path: 'galleries',
+    canActivate: [AuthGuard],
     component: GalleriesComponent
   },
   {
     path: 'galleries/:id',
+    canActivate: [AuthGuard],
     component: GalleryViewComponent,
     resolve: {
       gallery: GalleryResolver
@@ -31,6 +35,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'galleries/:id/author',
+    canActivate: [AuthGuard],
     component: GalleryAuthorComponent,
     resolve: {
       user: UserResolver
@@ -38,22 +43,27 @@ const appRoutes: Routes = [
   },
   {
     path: 'login',
+    canActivate: [GuestGuard],
     component: LoginComponent
   },
   {
-    path: 'my-galleries',
-    component: GalleryMyComponent
-  },
-  {
     path: 'register',
+    canActivate: [GuestGuard],
     component: RegisterComponent
   },
   {
+    path: 'my-galleries',
+    canActivate: [AuthGuard],
+    component: GalleryMyComponent
+  },
+  {
     path: 'search/:term',
+    canActivate: [AuthGuard],
     component: SearchPageComponent
   },
   {
     path: 'create',
+    canActivate: [AuthGuard],
     component: GalleryAddComponent
   }
 

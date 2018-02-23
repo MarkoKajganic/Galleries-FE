@@ -5,6 +5,8 @@ import { GalleryService } from './services/gallery.service';
 import { AppRoutingModule } from './app-routing.module';
 import { GalleryResolver } from './resolvers/GalleryResolver';
 import { UserResolver } from './resolvers/UserResolver';
+import { AuthGuard } from './guards/auth.guard';
+import { GuestGuard } from './guards/guest.guard';
 
 
 @NgModule({
@@ -15,7 +17,10 @@ import { UserResolver } from './resolvers/UserResolver';
     providers: [
         GalleryService,
         GalleryResolver,
-        UserResolver
+        UserResolver,
+        AuthGuard,
+        GuestGuard
+
     ],
     declarations: [
         GalleryRowComponent

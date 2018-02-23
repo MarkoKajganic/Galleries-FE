@@ -19,6 +19,9 @@ import { GalleryViewComponent } from './components/gallery-view/gallery-view.com
 import { GalleryAddComponent } from './components/gallery-add/gallery-add.component';
 import { GalleryAuthorComponent } from './components/gallery-author/gallery-author.component';
 import { GalleryMyComponent } from './components/gallery-my/gallery-my.component';
+import { CommentsFormComponent } from './components/comments-form/comments-form.component';
+import { CommentService } from './services/comment.service';
+
 
 
 @NgModule({
@@ -31,7 +34,8 @@ import { GalleryMyComponent } from './components/gallery-my/gallery-my.component
     GalleryViewComponent,
     GalleryAddComponent,
     GalleryAuthorComponent,
-    GalleryMyComponent
+    GalleryMyComponent,
+    CommentsFormComponent
     
   ],
   imports: [
@@ -46,6 +50,7 @@ import { GalleryMyComponent } from './components/gallery-my/gallery-my.component
   providers: [
     AuthService,
     GalleryService,
+    CommentService
   ],
   exports: [
   ],

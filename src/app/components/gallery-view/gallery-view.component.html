@@ -1,12 +1,39 @@
+<hr style="background:#ff9900; border:0; height:15px" />
+
 <h1 align="center">{{gallery.title}}</h1>
+
+<hr style="background:#ff9900; border:0; height:10px" />
 
 <a routerLink="/galleries/{{gallery.id}}/author" routerLinkActive="active">
     <h3 align="center">by {{gallery.user.first_name}} {{gallery.user.last_name}}</h3> </a>
+
+<hr style="background:#ff9900; border:0; height:5px" />
+
 
 <p>Created at: {{gallery.created_at}}</p>
 <p>{{gallery.description}}</p>
 
 <img src="{{ gallery.image_urls }}" width="250">
+
+
+<hr style="background:#ff9900; border:0; height:5px" />
+
+<h3 align="center">Comments</h3>
+
+<hr style="background:#ff9900; border:0; height:5px" />
+
+<div *ngFor="let comment of gallery.comments">
+   
+    <p>Posted at: {{comment.created_at}} By {{comment.user.first_name}} {{comment.user.last_name}}</p>
+
+<hr>
+
+    <p>{{comment.body}}</p>
+
+<hr style="background:#ff9900; border:0; height:2px" />    
+</div> 
+
+<app-comments-form></app-comments-form>
 
 
 

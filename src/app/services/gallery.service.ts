@@ -27,6 +27,7 @@ export class GalleryService {
                         gallery.image_urls,
                         gallery.user_id,
                         gallery.user,
+                        gallery.comments,
                         gallery.created_at);
                 });
                 o.next(this.galleries);
@@ -47,6 +48,7 @@ export class GalleryService {
                     gallery.image_urls,
                     gallery.user_id,
                     gallery.user,
+                    gallery.comments,
                     gallery.created_at 
                 );
                 o.next(newGallery);
@@ -129,4 +131,24 @@ export class GalleryService {
             );
         });
     }
+
+    public deleteGallery(gallery: Gallery)
+  {
+    return new Observable((o: Observer<any>) => {
+      this.http.delete('http://localhost:8000/api/galleries/' + gallery.id,
+        {
+          headers: this.authService.getRequestHeaders(),
+        })
+        .subscribe(
+          () => {
+            const index = this.galleries.indexOf(gallery);
+            this.galleries.splice(index, 1);
+
+            o.next(index);
+            return o.complete();
+          }
+        );
+    });
+  }
+
 }

@@ -1,0 +1,19 @@
+
+<form #commentForm="ngForm" (ngSubmit)="postComment()">
+    <div class="form-group">
+        <label>Post a comment</label>
+
+        <input #body="ngModel" maxlength="1000" [(ngModel)]="comment.body"
+         type="text"  class="form-control" id="body" name="body">
+    </div>
+    
+    <div *ngIf="body.invalid" class="alert alert-danger">
+            <div *ngIf="body.errors.maxlength">
+                    Comment should not exceed 1000 characters.
+            </div>
+        </div>
+
+    <button type="submit" class="btn btn-primary">Post Comment</button>
+</form>
+
+

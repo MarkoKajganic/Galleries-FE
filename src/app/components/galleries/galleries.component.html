@@ -1,6 +1,7 @@
-<p>
- All galleries
-</p>
+<hr style="background:#ff9900; border:0; height:10px" />
+<h3 align="center">All galleries</h3>
+<hr style="background:#ff9900; border:0; height:10px" />
+
 
 <table class='table'>
    
@@ -19,7 +20,7 @@
   </table>
 
   <div>
-      <button  [hidden]="!hasMoreItems" (click)="showMoreItems()">Load more</button>
+      <button class="btn btn-success btn-lg" [hidden]="!hasMoreItems" (click)="showMoreItems()">Load more</button>
   </div>
 
   <router-outlet></router-outlet>

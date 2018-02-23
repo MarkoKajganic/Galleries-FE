@@ -17,13 +17,14 @@ export class GalleriesComponent implements OnInit {
   ngOnInit() {
     this.galleryService.getGalleries().subscribe(data => {
       this.galleries = data;
+      console.log('data', data);
     }, (err: HttpErrorResponse) => {
       alert(`Backend returned code ${err.status} with message: ${err.error}`);
     });
 }
 
       
-      //super bad Load more functionality only on frontend
+      //super bad Load more functionality on frontend only
       private pageLimit = 10;
       private pagesShown = 1;
       private pageSize = 10;

@@ -12,6 +12,11 @@
     
     <tr> <img src="{{ gallery.image_urls }}" width="250"></tr>
 
-    <button type="button" class="btn btn-default mr-2" *ngIf="canEdit()"> Edit </button>
-    <button type="button" class="btn btn-default mr-2"  *ngIf="canEdit()"> Delete </button>
+    <button type="button" class="btn btn-warning" *ngIf="canEdit()"
+        (click)="editGallery()"> Edit </button>
+
+
+    <button type="button" class="btn btn-danger"  *ngIf="canEdit()" 
+        (click)="deleteGallery(gallery)"> Delete </button>
     
+<hr style="background:#ff9900; border:0; height:10px" />
